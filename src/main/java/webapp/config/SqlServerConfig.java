@@ -1,6 +1,7 @@
 package webapp.config;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
@@ -16,10 +17,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
+@EnableAutoConfiguration
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "sqlServerEntityManagerFactory",
         transactionManagerRef = "sqlServerTransactionManager",
-        basePackages = "services.repository")
+        basePackages = "gloomhavenService.services.repository.beans")
 public class SqlServerConfig {
 
     @Bean
