@@ -7,9 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages = "gloomhavenService.services.repository.beans")
 @ComponentScan(basePackages = "gloomhavenService")
 @EntityScan("gloomhavenService")
+@EnableJpaRepositories(basePackages = "gloomhavenService.services.repository.beans")
 public class GloomhavenServiceApplication {
 
     public static void main(String[] args) {
