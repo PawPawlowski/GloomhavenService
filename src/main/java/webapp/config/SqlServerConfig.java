@@ -11,15 +11,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
 @EnableAutoConfiguration
-@EnableTransactionManagement
-@EnableJpaRepositories(entityManagerFactoryRef = "sqlServerEntityManagerFactory",
+@EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactory",
         transactionManagerRef = "sqlServerTransactionManager",
         basePackages = "gloomhavenService.services.repository.beans")
 public class SqlServerConfig {
@@ -49,7 +47,7 @@ public class SqlServerConfig {
 
     @Bean
     public PlatformTransactionManager sqlServerTransactionManager(
-            @Qualifier("sqlServerEntityManagerFactory") EntityManagerFactory factory) {
+            @Qualifier("entityManagerFactory") EntityManagerFactory factory) {
         return new JpaTransactionManager(factory);
     }
 }
