@@ -33,7 +33,7 @@ public class ScenarioLevelView {
         this.gold = gold;
     }
 
-    public int getTrap() {
+    public int getTrapDamage() {
         return trapDamage;
     }
 
