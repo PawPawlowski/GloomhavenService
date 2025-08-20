@@ -29,7 +29,7 @@ public class AchievementReader extends BaseReader<Achievement> {
     @Override
     protected Optional<Achievement> readSingleRow(Row row) {
         Achievement achievement = new Achievement();
-        int number = ExcelUtil.getIntValue(row, indeces, ScenarioSheet.Sheet.Achievement.Column.NUMBER);
+        int number = ExcelUtil.getIntValue(row, indeces, ScenarioSheet.Sheet.Achievement.Column.NUMBER, 0);
         achievement.setRef(number);
         ExcelUtil.getValue(row, indeces, ScenarioSheet.Sheet.Achievement.Column.NAME)
                 .ifPresent(achievement::setName);

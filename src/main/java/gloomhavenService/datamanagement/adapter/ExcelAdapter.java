@@ -36,7 +36,7 @@ public class ExcelAdapter implements IExcelAdapter {
         this.scenarioAchievementRepository = scenarioAchievementRepository;
     }
 
-    private static String BASE_URL = "C:\\Users\\joje\\Gloomhaven\\GloomhavenService\\src\\main\\resources";
+    private static String BASE_URL = "C:\\Users\\joje\\Dropbox\\Spil\\Gloomhaven\\App\\Service\\src\\main\\resources";
     private static String SHEET_URL = "\\scenarios\\scenarios.xlsx";
 
     @Transactional

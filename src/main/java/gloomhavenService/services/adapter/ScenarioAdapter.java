@@ -107,12 +107,16 @@ public class ScenarioAdapter implements IScenarioAdapter {
             scenarioRepository.save(s);
         });
 
+        updateAffectedScenarios(scenario);
+
+        return true;
+    }
+
+    private void updateAffectedScenarios(Optional<Scenario> scenario) {
         unlockScenarios(scenario);
         blockScenarios(scenario);
         obtainAchievements(scenario);
         removeAchievements(scenario);
-
-        return true;
     }
 
     private void obtainAchievements(Optional<Scenario> scenario) {

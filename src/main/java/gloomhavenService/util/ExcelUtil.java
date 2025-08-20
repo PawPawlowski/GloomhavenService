@@ -19,12 +19,12 @@ public class ExcelUtil {
                 .map(Cell::getStringCellValue);
     }
 
-    public static int getIntValue(Row row, Map<String, Integer> indeces, String column) {
+    public static int getIntValue(Row row, Map<String, Integer> indeces, String column, int defaultValue) {
         return Optional.ofNullable(column)
                 .map(indeces::get)
                 .map(row::getCell)
                 .map(Cell::getNumericCellValue)
                 .map(Double::intValue)
-                .orElse(0);
+                .orElse(defaultValue);
     }
 }
